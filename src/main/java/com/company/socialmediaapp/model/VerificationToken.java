@@ -1,13 +1,15 @@
 package com.company.socialmediaapp.model;
 
 import java.time.Instant;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import static javax.persistence.FetchType.LAZY;
-import static javax.persistence.GenerationType.IDENTITY;
-import javax.persistence.*;
+import jakarta.persistence.*;
+
+import static jakarta.persistence.FetchType.LAZY;
+import static jakarta.persistence.GenerationType.IDENTITY;
 /**
  *
  * @author mehul jain

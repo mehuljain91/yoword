@@ -12,7 +12,6 @@ import com.company.socialmediaapp.repository.CommentRepository;
 import com.company.socialmediaapp.repository.PostRepository;
 import com.company.socialmediaapp.repository.UserRepository;
 import java.util.List;
-import static java.util.stream.Collectors.toList;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -53,7 +52,7 @@ public class CommentService {
         Post post = postRepository.findById(postId).orElseThrow(() -> new PostNotFoundException(postId.toString()));
         return commentRepository.findByPost(post)
                 .stream()
-                .map(commentMapper::mapToDto).collect(toList());
+                .map(commentMapper::mapToDto).toList();
     }
 
     public List<CommentsDto> getAllCommentsForUser(String userName) {
@@ -62,7 +61,7 @@ public class CommentService {
         return commentRepository.findAllByUser(user)
                 .stream()
                 .map(commentMapper::mapToDto)
-                .collect(toList());
+                .toList();
     }
 
     public boolean containsSwearWords(String comment) {

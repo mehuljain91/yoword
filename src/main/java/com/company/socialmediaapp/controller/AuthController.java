@@ -6,7 +6,7 @@ import com.company.socialmediaapp.dto.RefreshTokenRequest;
 import com.company.socialmediaapp.dto.RegisterRequest;
 import com.company.socialmediaapp.service.AuthService;
 import com.company.socialmediaapp.service.RefreshTokenService;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import static org.springframework.http.HttpStatus.OK;
 import org.springframework.http.ResponseEntity;

@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Data;
 import lombok.Builder;
 
+import jakarta.validation.constraints.NotBlank;
 /**
  *
  * @author mehul jain
@@ -17,7 +18,12 @@ import lombok.Builder;
 public class MwordDto {
     
     private Long id;
+    
+    @NotBlank(message = "Community name is required")
     private String name;
+    
+    @NotBlank(message = "Description is required")
     private String description;
+    
     private Integer numberOfPosts;
 }

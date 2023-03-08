@@ -37,13 +37,13 @@ public class PostController {
         return status(HttpStatus.OK).body(postService.getPost(id));
     }
 
-    @GetMapping("by-mword/{id}")
-    public ResponseEntity<List<PostResponse>> getPostsByMword(Long id) {
-        return status(HttpStatus.OK).body(postService.getPostsByMword(id));
+    @GetMapping(params = "mwordId")
+    public ResponseEntity<List<PostResponse>> getPostsByMword(@RequestParam Long mwordId) {
+        return status(HttpStatus.OK).body(postService.getPostsByMword(mwordId));
     }
 
-    @GetMapping("by-user/{name}")
-    public ResponseEntity<List<PostResponse>> getPostsByUsername(String username) {
+    @GetMapping(params = "username")
+    public ResponseEntity<List<PostResponse>> getPostsByUsername(@RequestParam String username) {
         return status(HttpStatus.OK).body(postService.getPostsByUsername(username));
     }
 }
